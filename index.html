@@ -1,0 +1,144 @@
+<html>
+    <body>
+    <div class="heading">
+<h1>Faria's Art Gallery</h1>
+</div>
+<div class="container">
+<div class="carousel">
+    <div class="carousel__container">
+      <div class="carousel__item" style="--i: 0"><img src="images/Childhood.png" alt="Image 1"></div>
+      <div class="carousel__item" style="--i: 1"><img src="images/Jonna Jinton.png" alt="Image 2"></div>
+      <div class="carousel__item" style="--i: 2"><img src="images/Little fairy updated.png" alt="Image 3"></div>
+      <div class="carousel__item" style="--i: 3"><img src="images/Moana.png" alt="Image 4"></div>
+      <div class="carousel__item" style="--i: 4"><img src="images/New dream riding Max.png" alt="Image 5"></div>
+    </div>
+    <button class="control left">&lt;</button>
+    <button class="control right">&gt;</button>
+  </div>
+</div>
+
+<script>
+    const carouselContainer = document.querySelector('.carousel__container');
+const leftButton = document.querySelector('.control.left');
+const rightButton = document.querySelector('.control.right');
+
+let angle = 0; // Starting angle
+const step = 72; // Rotate by 72 degrees for each step (5 items = 360/5 = 72)
+
+// Rotate the carousel
+function rotateCarousel(direction) {
+  angle += direction === 'left' ? step : -step;
+  carouselContainer.style.transform = `rotateY(${angle}deg)`;
+}
+
+// Add event listeners for keyboard controls
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowLeft') {
+    rotateCarousel('left');
+  } else if (event.key === 'ArrowRight') {
+    rotateCarousel('right');
+  }
+});
+
+
+// Add event listeners
+leftButton.addEventListener('click', () => rotateCarousel('left'));
+rightButton.addEventListener('click', () => rotateCarousel('right'));
+
+</script>
+
+<style>
+    body {
+
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: #111;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.heading{
+    padding: 20;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #fff; /* Text color */
+  text-shadow: 
+    0 0 5px #f2ff00,  /* Inner glow */
+    0 0 10px #f2ff00, /* Outer glow */
+    0 0 20px #f2ff00, 
+    0 0 40px #f2ff00, 
+    0 0 80px #f2ff00;
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+    padding-top: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel {
+  perspective: 1000px;
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+
+.carousel__container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s ease; 
+}
+
+.carousel__item {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 50%;
+  top: 50%;
+  transform-origin: center;
+  transform: translate(-50%, -50%) rotateY(calc(var(--i) * 72deg)) translateZ(400px);
+}
+
+.carousel__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.control.left {
+  left: -60px;
+}
+
+.control.right {
+  right: -60px;
+}
+
+.control:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+</style>  
+</body>
+</html>
