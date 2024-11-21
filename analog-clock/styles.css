@@ -1,0 +1,76 @@
+/* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.clock {
+    width: 300px;
+    height: 300px;
+    border: 10px solid #333;
+    border-radius: 50%;
+    background: white;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.clock-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hand {
+    width: 35%;
+    height: 4px;
+    background: #333;
+    position: absolute;
+    right: 50%;
+    transform-origin: 100%; /* Fix the transform origin */
+    transform: rotate(90deg);
+    transition: transform 0.05s cubic-bezier(0.4, 2.3, 0.3, 1);
+}
+
+.hour-hand {
+    height: 6px;
+    background: #555;
+}
+
+.minute-hand {
+    height: 4px;
+    background: #777;
+}
+
+.second-hand {
+    height: 2px;
+    background: #e74c3c;
+}
+
+.number {
+    position: absolute;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.number1 { transform: translate(-50%, -50%) rotate(30deg) translateY(-130px); }
+.number2 { transform: translate(-50%, -50%) rotate(60deg) translateY(-130px); }
+.number3 { transform: translate(-50%, -50%) rotate(90deg) translateY(-130px); }
+.number4 { transform: translate(-50%, -50%) rotate(120deg) translateY(-130px); }
+.number5 { transform: translate(-50%, -50%) rotate(150deg) translateY(-130px); }
+.number6 { transform: translate(-50%, -50%) rotate(180deg) translateY(-130px); }
+.number7 { transform: translate(-50%, -50%) rotate(210deg) translateY(-130px); }
+.number8 { transform: translate(-50%, -50%) rotate(240deg) translateY(-130px); }
+.number9 { transform: translate(-50%, -50%) rotate(270deg) translateY(-130px); }
+.number10 { transform: translate(-50%, -50%) rotate(300deg) translateY(-130px); }
+.number11 { transform: translate(-50%, -50%) rotate(330deg) translateY(-130px); }
+.number12 { transform: translate(-50%, -50%) rotate(0deg) translateY(-130px); }
