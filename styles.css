@@ -14,12 +14,7 @@ body {
       text-align: center;
       font-size: 1.5rem;
       color: #fff; /* Text color */
-    text-shadow: 
-      0 0 5px #f2ff00,  /* Inner glow */
-      0 0 10px #f2ff00, /* Outer glow */
-      0 0 20px #f2ff00, 
-      0 0 40px #f2ff00, 
-      0 0 80px #f2ff00;
+
     font-family: 'Arial', sans-serif;
   }
   
@@ -101,7 +96,10 @@ body {
 }
 
 .navbar h1 {
-    margin: 10;
+  font: 2em sans-serif;
+  text-align: center;
+  padding-left: 30%;
+    margin: 5;
 }
 
 .navbar ul {
@@ -126,9 +124,9 @@ body {
 .sidebar {
     position: fixed;
     right: 0;
-    top: 60px;
+    top: 100px;
     width: 300px;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 100px);
     background: #222;
     padding: 20px;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
@@ -203,6 +201,35 @@ footer {
   }
 }
 
+#videos {
+  text-align: center;
+  font: 1.5em sans-serif;;
+  margin: 80px 0;
+}
+
+.video-container {
+  position: relative; 
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0; /* Set height to 0 and allow padding to control it */
+  overflow: hidden; /* Ensure content doesn't overflow */
+  max-width: 100%; /* Ensure it doesn't exceed the parent's width */
+  margin: 0 auto; /* Center the container */
+}
+
+.video-container iframe {
+  margin-left: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%; 
+  height: 50%; 
+  border: 0;
+  border-radius: 10px; /* Optional for rounded corners */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Optional for shadow */
+}
+
+
+
 @media (max-width: 480px) {
   .heading {
       font-size: 1.2rem;
@@ -225,3 +252,5 @@ footer {
       height: 30px;
   }
 }
+
+
